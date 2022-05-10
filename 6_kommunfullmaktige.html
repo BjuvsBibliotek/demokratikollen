@@ -83,19 +83,22 @@ Du behöver sedan ändra ett par saker på varje sida.
             <h3>Del 2</h3>
 
             <!--Uppgiftens nummer-->
-            <img src="img/torkild_strandberg.jpg">
+            <img src="img/kommunensOrganisation.png">
             <br/>
             <br/>
             <h3>Fråga 6</h3>
             <!--Vilket är uppdraget?-->
             <p>
-            Mannen på bilden heter Torkild Strandberg. <br/>
-            Han är Landskronas ordförande i kommunfullmäktige.<br/>
-            Vilket parti är han engagerad i? <br/>
+            I kommunalvalet väljs de partier/politiker som blir den grupp som kallas kommunfullmäktige.<br/>
+            Kommunfullmäktige är de som bestämmer över vad kommunen ska lägga sina pengar på,
+            vilka nämnder som ska finnas och vilka politiker som ska sitta i nämnderna.<br/>
+            Därför kan nämndernas namn och ansvarsområden se olika ut i olika kommuner. <br/>
+            Nämndernas jobb är att se till så att kommunfullmäktiges beslut går från ord till verklighet.<br/>
+            Kommunfullmäktiges ordförande i Bjuv är en kvinna. Vad heter hon?<br/>
               
-            Du hittar svaret på Landskrona stads hemsida:<br/><br/>
+            Du hittar svaret på Bjuvs kommuns hemsida:<br/><br/>
             
-            <a href="https://www.landskrona.se/kommun-politik/politik/politik-politiker/kommunalrad/" target="_blank">Landskrona stad</a>
+            <a href="https://www.bjuv.se/kommun-och-politik/kommunens-organisation/kommunfullmaktige.html" target="_blank">Bjuvs kommun</a>
             </p>
           </div>
         </div>
@@ -109,7 +112,7 @@ Du behöver sedan ändra ett par saker på varje sida.
         <div class="row">
           <div class="col-lg-12 text-center">
             <h2 class="section-heading text-uppercase">Svar</h2>
-            <h3 class="section-subheading text-muted">Ledtråd: Svara med ett partinamn, inte bara en bokstav.</h3>
+            <h3 class="section-subheading text-muted">Ledtråd: Svara med förnamn och efternamn.</h3>
           </div>
         </div>
         <div class="row">
@@ -122,7 +125,7 @@ Du behöver sedan ändra ett par saker på varje sida.
               <div class="row">
                 <div class="col-md-12">
                   <div class="form-group">
-                    <input class="form-control" id="answer" type="text" placeholder="Skriv ditt svar här" required="required" data-validation-required-message="Rutan får inte vara tom">
+                    <input class="form-control" id="answer" type="text" placeholder="förnamn efternamn" required="required" data-validation-required-message="Rutan får inte vara tom">
                     <p class="help-block text-danger"></p>
                   </div>
                   
@@ -167,7 +170,7 @@ Du behöver sedan ändra ett par saker på varje sida.
       //Det använder skriver i rutan hämtas in och sparas i en variabel som heter answer.
       var answer = document.forms["contactForm"]["answer"].value.toLowerCase();
 
-      if (answer == "liberalerna") {
+      if (answer == "pia trollehjelm") {
           return true;
       }else{
         document.getElementById("answer").value ="";
