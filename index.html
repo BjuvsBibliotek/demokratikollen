@@ -161,7 +161,8 @@ ctrl+f för att snabbt hitta de platser du behöver ändra på.-->
             <h3>Fråga 1</h3>
             <!--Här nedan beskriver du vad uppdraget skall vara-->
             <p>
-            Vad betyder ordet demokrati? <br/> 
+            Ordet demokrati kommer från grekiska ord från början. <br/>
+            Vad betyder demokrati? <br/> 
             Du hittar svaret på myndigheten  <br/>
             Forum för levande historias hemsida.<br/><br/>
             
@@ -180,14 +181,40 @@ ctrl+f för att snabbt hitta de platser du behöver ändra på.-->
         <div class="row">
           <div class="col-lg-12 text-center">
             <h2 class="section-heading text-uppercase">Svar</h2>
-            <h3 class="section-subheading text-muted">Ledtråd: Svara med ett ord.</h3>
+            <h3 class="section-subheading text-muted"></h3>
           </div>
         </div>
         <div class="row">
           <div class="col-lg-12">
 
       <!--VILKEN SIDA SKALL LADDAS OM MAN SKRIVIT IN RÄTT SVAR-->
-            <form id="contactForm" name="sentMessage" novalidate="novalidate" 
+            <form id="radioForm" novalidate="novalidate" 
+            action="./2_andelDiktatur.html" 
+            onsubmit="return validateForm()" autocomplete="off">
+              
+              <div class="col-lg-12 text-center styleAlt">
+                <input type="radio" id="one" name="alternativ" value="alt1" checked="checked">
+                <label for="one">1. fria val</label><br/>
+
+                <input type="radio" id="two" name="alternativ" value="alt2">
+                <label for="two">2. majoriteten bestämmer</label><br/>
+
+                <input type="radio" id="three" name="alternativ" value="alt3">
+                <label for="three">3. folkmakt</label><br/>
+                <br/><br/>
+              </div>
+              
+              <div class="col-lg-12 text-center">
+                <div id="success"></div>
+                <!--Vill du ha en annan text på knappen som skickar in svaret, ändra den vita texten.-->
+                <button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Skicka ditt svar</button>
+              </div>
+
+        </div></form>
+
+            <!-- FRITEXTSVAR
+
+              <form id="contactForm" name="sentMessage" novalidate="novalidate" 
             action="2_andelDiktatur.html" 
             onsubmit="return validateForm()" autocomplete="off">
               <div class="row">
@@ -203,7 +230,7 @@ ctrl+f för att snabbt hitta de platser du behöver ändra på.-->
                 </div>
               </div>
             
-          </div></form>
+          </div></form> -->
         </div>
       </div>
     </div></section>
@@ -233,18 +260,29 @@ ctrl+f för att snabbt hitta de platser du behöver ändra på.-->
 
     <!--I DENNA DEL BERÄTTAR DU VAD SOM ÄR RÄTT SVAR-->
     <script>
-    function validateForm() {
-
-      //Det använder skriver i rutan hämtas in och sparas i en variabel som heter answer.
-      var answer = document.forms["contactForm"]["answer"].value.toLowerCase();
-
-      if (answer == "folkstyre" || answer == "folkmakt") { /*Kom ihåg att svaret skall skrivas med gemener*/
+    function validateForm()
+    {
+      if (document.forms["radioForm"]["alternativ"].value == "alt3") {
           return true;
       }else{
+        document.getElementById("moveOn").innerHTML = "<h3 style=color:red>Fel, försök igen</h3>";
+        return false;
+      }      
+
+     /*FRITEXTSVAR
+     
+     var answer = document.forms["contactForm"]["answer"].value.toLowerCase();
+
+      if (answer == "folkstyre" || answer == "folkmakt")
+      {
+          return true;
+      }
+      else
+      {
         document.getElementById("answer").value ="";
         document.getElementById("answer").setAttribute("placeholder","Det var tyvärr fel svar, försök igen!");
         return false;
-      }
+      } */
     }
   </script>
 </body>
