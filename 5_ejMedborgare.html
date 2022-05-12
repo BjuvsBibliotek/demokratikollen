@@ -114,14 +114,41 @@ Du behöver sedan ändra ett par saker på varje sida.
         <div class="row">
           <div class="col-lg-12 text-center">
             <h2 class="section-heading text-uppercase">Svar</h2>
-            <h3 class="section-subheading text-muted">Ledtråd: Svara med en siffra.</h3>
+            <h3 class="section-subheading text-muted" id="moveOn">Ledtråd: Vad gäller om du <b><u>inte</u></b> är medborgare i ett EU-land, Norge eller Island</h3>
           </div>
         </div>
         <div class="row">
           <div class="col-lg-12">
 
       <!--VILKEN SIDA SKALL LADDAS OM MAN SKRIVIT IN RÄTT SVAR-->
-            <form id="contactForm" name="sentMessage" novalidate="novalidate" 
+            
+            <form id="radioForm" novalidate="novalidate" 
+            action="./6_kommunfullmaktige.html" 
+            onsubmit="return validateForm()" autocomplete="off">
+              
+              <div class="col-lg-12 text-center styleAlt">
+                <input type="radio" id="one" name="alternativ" value="alt1" checked="checked">
+                <label for="one">1 månad</label><br/>
+
+                <input type="radio" id="two" name="alternativ" value="alt2">
+                <label for="two">3 år</label><br/>
+
+                <input type="radio" id="three" name="alternativ" value="alt3">
+                <label for="three">18 år</label><br/>
+                <br/><br/>
+              </div>
+              
+              <div class="col-lg-12 text-center">
+                <div id="success"></div>
+                <!--Vill du ha en annan text på knappen som skickar in svaret, ändra den vita texten.-->
+                <button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Skicka ditt svar</button>
+              </div>
+              
+            </form>
+          </div>
+      
+      <!--FRITEXTSVAR
+              <form id="contactForm" name="sentMessage" novalidate="novalidate" 
             action="klar_1.html" 
             onsubmit="return validateForm()" autocomplete="off">
               <div class="row">
@@ -136,8 +163,8 @@ Du behöver sedan ändra ett par saker på varje sida.
                   <button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Skicka ditt svar</button>
                 </div>
               </div>
-            
-          </div></form>
+            </form>
+          </div> -->
         </div>
       </div>
     </div></section>
@@ -167,9 +194,20 @@ Du behöver sedan ändra ett par saker på varje sida.
 
     <!--I DENNA DEL BERÄTTAR DU VAD SOM ÄR RÄTT SVAR-->
     <script>
-    function validateForm() {
+    function validateForm()
+    {
+      if (document.forms["radioForm"]["alternativ"].value == "alt2")
+      {
+          return true;
+      }
+      else
+      {
+        document.getElementById("moveOn").innerHTML = "<h3 style=color:red>Fel, försök igen</h3>";
+        return false;
+      }      
 
-      //Det använder skriver i rutan hämtas in och sparas i en variabel som heter answer.
+      
+     /*FRITEXT  
       var answer = document.forms["contactForm"]["answer"].value.toLowerCase();
       
       if (answer == "3") {
@@ -178,7 +216,7 @@ Du behöver sedan ändra ett par saker på varje sida.
         document.getElementById("answer").value ="";
         document.getElementById("answer").setAttribute("placeholder","Det var tyvärr fel svar, försök igen!");
         return false;
-      }
+      } */
     }
   </script>
 </body>

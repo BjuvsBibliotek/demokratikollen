@@ -90,12 +90,13 @@ Du behöver sedan ändra ett par saker på varje sida.
             <!--Vilket är uppdraget?-->
             <p>
               Valen i Sverige är hemliga. Ingen kan kräva att få veta hur du röstar.<br/>
+              Inte ens din familj eller dina vänner. <br/>
               (Däremot kan du själv välja att berätta om du vill.)<br/>
               Det är viktigt för att demokratin ska fungera.<br/>
               Du måste kunna bevisa vem du är när du röstar.<br/>
               Det är för att kontrollera att du har rätt att rösta.<br/>
               Det är också för att ingen ska kunna rösta flera gånger.<br/>
-              Vad behöver du ha med dig till vallokalen när du ska rösta?<br/><br/>
+              Vad borde du ha med dig till vallokalen när du ska rösta?<br/><br/>
               
               <a href="https://www.val.se/att-rosta/var-rostar-jag/rosta-pa-valdagen-i-din-vallokal.html" target="_blank">Valmyndigheten - Rösta i din vallokal</a>
             </p>
@@ -111,14 +112,40 @@ Du behöver sedan ändra ett par saker på varje sida.
         <div class="row">
           <div class="col-lg-12 text-center">
             <h2 class="section-heading text-uppercase">Svar</h2>
-            <h3 class="section-subheading text-muted">Ledtråd: Svara med ett ord.</h3>
+            <h3 class="section-subheading text-muted" id="moveOn"></h3>
           </div>
         </div>
         <div class="row">
           <div class="col-lg-12">
 
       <!--VILKEN SIDA SKALL LADDAS OM MAN SKRIVIT IN RÄTT SVAR-->
-            <form id="contactForm" name="sentMessage" novalidate="novalidate" 
+            <form id="radioForm" novalidate="novalidate" 
+            action="./9_vallokalenTaMed.html" 
+            onsubmit="return validateForm()" autocomplete="off">
+              
+              <div class="col-lg-12 text-center styleAlt">
+                <input type="radio" id="one" name="alternativ" value="alt1" checked="checked">
+                <label for="one">Bankkort</label><br/>
+
+                <input type="radio" id="two" name="alternativ" value="alt2">
+                <label for="two">ID-handling</label><br/>
+
+                <input type="radio" id="three" name="alternativ" value="alt3">
+                <label for="three">Telefon</label><br/>
+                <br/><br/>
+              </div>
+              
+              <div class="col-lg-12 text-center">
+                <div id="success"></div>
+                <!--Vill du ha en annan text på knappen som skickar in svaret, ändra den vita texten.-->
+                <button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Skicka ditt svar</button>
+              </div>
+              
+            </form>
+          </div>
+      
+      <!--FRITEXTSVAR
+         <form id="contactForm" name="sentMessage" novalidate="novalidate" 
             action="10_tillgangligAllmanheten.html" 
             onsubmit="return validateForm()" autocomplete="off">
               <div class="row">
@@ -134,7 +161,7 @@ Du behöver sedan ändra ett par saker på varje sida.
                 </div>
               </div>
             
-          </div></form>
+          </div></form> -->
         </div>
       </div>
     </div></section>
@@ -164,10 +191,19 @@ Du behöver sedan ändra ett par saker på varje sida.
 
     <!--I DENNA DEL BERÄTTAR DU VAD SOM ÄR RÄTT SVAR-->
     <script>
-    function validateForm() {
-
-      //Det använder skriver i rutan hämtas in och sparas i en variabel som heter answer.
-      var answer = document.forms["contactForm"]["answer"].value.toLowerCase();
+    function validateForm()
+    {
+      if (document.forms["radioForm"]["alternativ"].value == "alt2")
+      {
+          return true;
+      }
+      else
+      {
+        document.getElementById("moveOn").innerHTML = "<h3 style=color:red>Fel, försök igen</h3>";
+        return false;
+      }
+      
+      /* var answer = document.forms["contactForm"]["answer"].value.toLowerCase();
       
       if (answer == "id-handling" || answer == "id handling" || answer == "idhandling" || answer == "id") {
           return true;
@@ -175,7 +211,7 @@ Du behöver sedan ändra ett par saker på varje sida.
         document.getElementById("answer").value ="";
         document.getElementById("answer").setAttribute("placeholder","Det var tyvärr fel svar, försök igen!");
         return false;
-      }
+      } */
     }
   </script>
 </body>
