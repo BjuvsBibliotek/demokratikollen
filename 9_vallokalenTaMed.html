@@ -49,7 +49,7 @@ Du behöver sedan ändra ett par saker på varje sida.
   <!-- Denna del av koden berättar man vad menyn skall innehålla -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">DEMOKRATIKOLLEN</a>
+        <a class="navbar-brand js-scroll-trigger" href="./index.html">DEMOKRATIKOLLEN</a>
 
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
@@ -83,7 +83,7 @@ Du behöver sedan ändra ett par saker på varje sida.
             <br/>
 
             <!--Uppgiftens nummer-->
-            <img src="img/lista.png">
+            <img src="img/lista.png" alt="Bild av en checklista" height="340px" width="323px">
             <br/>
             <br/>
             <h3>Fråga 9</h3>
@@ -91,7 +91,7 @@ Du behöver sedan ändra ett par saker på varje sida.
             <p>
               Valen i Sverige är hemliga. Ingen kan kräva att få veta hur du röstar.<br/>
               Inte ens din familj eller dina vänner. <br/>
-              (Däremot kan du själv välja att berätta om du vill.)<br/>
+              (Men kan du själv välja att berätta om du vill.)<br/>
               Det är viktigt för att demokratin ska fungera.<br/>
               Du måste kunna bevisa vem du är när du röstar.<br/>
               Det är för att kontrollera att du har rätt att rösta.<br/>
@@ -111,7 +111,7 @@ Du behöver sedan ändra ett par saker på varje sida.
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">Svar</h2>
+            <h2 class="section-heading text-uppercase">Klicka i ditt svar</h2>
             <h3 class="section-subheading text-muted" id="moveOn"></h3>
           </div>
         </div>
@@ -120,17 +120,17 @@ Du behöver sedan ändra ett par saker på varje sida.
 
       <!--VILKEN SIDA SKALL LADDAS OM MAN SKRIVIT IN RÄTT SVAR-->
             <form id="radioForm" novalidate="novalidate" 
-            action="./9_vallokalenTaMed.html" 
+            action="./10_tillgangligAllmanheten.html" 
             onsubmit="return validateForm()" autocomplete="off">
               
               <div class="col-lg-12 text-center styleAlt">
-                <input type="radio" id="one" name="alternativ" value="alt1" checked="checked">
+                <input type="radio" id="one" name="alternativ" value="alt1" style="height:var(--radioHeight); width:var(--radioWidth); vertical-align: middle;" checked="checked">
                 <label for="one">Bankkort</label><br/>
 
-                <input type="radio" id="two" name="alternativ" value="alt2">
+                <input type="radio" id="two" name="alternativ" value="alt2" style="height:var(--radioHeight); width:var(--radioWidth); vertical-align: middle;">
                 <label for="two">ID-handling</label><br/>
 
-                <input type="radio" id="three" name="alternativ" value="alt3">
+                <input type="radio" id="three" name="alternativ" value="alt3" style="height:var(--radioHeight); width:var(--radioWidth); vertical-align: middle;">
                 <label for="three">Telefon</label><br/>
                 <br/><br/>
               </div>

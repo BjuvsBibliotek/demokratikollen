@@ -27,23 +27,6 @@
 
   </head>
 
-  <script>
-
-  function validateForm() {
-    var x = document.forms["contactForm"]["answer"].value;
-    x = x.toUpperCase();
-
-    if (x == "SÄPO") {
-        return true;
-    }else{
-      document.getElementById("answer").value ="";
-      document.getElementById("answer").setAttribute("placeholder","Det var tyvärr fel svar, försök igen!");
-      return false;
-    }
-  }
-
-  </script>
-
   <body id="page-top">
 
     <!-- Navigation -->

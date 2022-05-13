@@ -17,7 +17,12 @@ p{
 }
 
 header.masthead {
-    background-image: url("../img/regering.jpg");
+    background-image: url("../img/startbild.jpg");
+}
+
+:root {
+	--radioHeight: 20px;
+	--radioWidth: 20px;
 }
 
 .styleAlt {

@@ -49,7 +49,7 @@ Du behöver sedan ändra ett par saker på varje sida.
   <!-- Denna del av koden berättar man vad menyn skall innehålla -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">DEMOKRATIKOLLEN</a>
+        <a class="navbar-brand js-scroll-trigger" href="./index.html">DEMOKRATIKOLLEN</a>
 
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
@@ -83,18 +83,19 @@ Du behöver sedan ändra ett par saker på varje sida.
             <br/>
 
             <!--Uppgiftens nummer-->
-            <img src="img/regeringen.png">
+            <img src="img/regeringen.png" alt="Foto på 23 män och kvinnor som är Sveriges regering" height="333px" width="500px" >
             <br/>
             <br/>
             <h3>Fråga 11</h3>
             <!--Vilket är uppdraget?-->
             <p>
               Så här ser vår nuvarande regering ut.<br/>
-              Efter valet kan det bli en ny regering<br/>
+              Regeringen leds av statsministern<br/>
+              Efter valet i september kan det bli en ny regering<br/>
               och en ny statsminister.<br/>
               Vad heter vår nuvarande statsminister?<br/><br/>
                             
-              <a href="https://www.regeringen.se/sveriges-regering/statsradsberedningen/magdalena-andersson/" target="_blank">Regeringen - Statsminister</a>
+              <a href="https://www.regeringen.se/sveriges-regering/" target="_blank">Regeringen - Statsminister</a>
             </p>
           </div>
         </div>
@@ -107,15 +108,43 @@ Du behöver sedan ändra ett par saker på varje sida.
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">Svar</h2>
-            <h3 class="section-subheading text-muted">Ledtråd: Svara med för- och efternamn.</h3>
+            <h2 class="section-heading text-uppercase">Klicka i ditt svar</h2>
+            <h3 class="section-subheading text-muted" id="moveOn"></h3>
           </div>
         </div>
         <div class="row">
           <div class="col-lg-12">
 
       <!--VILKEN SIDA SKALL LADDAS OM MAN SKRIVIT IN RÄTT SVAR-->
-            <form id="contactForm" name="sentMessage" novalidate="novalidate" 
+            <form id="radioForm" novalidate="novalidate" 
+            action="./klar_2.html" 
+            onsubmit="return validateForm()" autocomplete="off">
+              
+              <div class="col-lg-12 text-center styleAlt">
+                <input type="radio" id="one" name="alternativ" value="alt1" style="height:var(--radioHeight); width:var(--radioWidth); vertical-align: middle;" checked="checked">
+                <label for="one">Ann Linde</label><br/>
+
+                <input type="radio" id="two" name="alternativ" value="alt2" style="height:var(--radioHeight); width:var(--radioWidth); vertical-align: middle;">
+                <label for="two">Khashayar Farmanbar</label><br/>
+
+                <input type="radio" id="three" name="alternativ" value="alt3" style="height:var(--radioHeight); width:var(--radioWidth); vertical-align: middle;">
+                <label for="three">Magdalena Andersson</label><br/>
+                <br/><br/>
+              </div>
+              
+              <div class="col-lg-12 text-center">
+                <div id="success"></div>
+                <!--Vill du ha en annan text på knappen som skickar in svaret, ändra den vita texten.-->
+                <button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Skicka ditt svar</button>
+              </div>
+              
+            </form>
+          </div>
+           
+      
+      
+      <!--FRITEXTSVAR
+          <form id="contactForm" name="sentMessage" novalidate="novalidate" 
             action="klar_2.html" 
             onsubmit="return validateForm()" autocomplete="off">
               <div class="row">
@@ -131,7 +160,7 @@ Du behöver sedan ändra ett par saker på varje sida.
                 </div>
               </div>
             
-          </div></form>
+          </div></form> -->
         </div>
       </div>
     </div></section>
@@ -161,9 +190,19 @@ Du behöver sedan ändra ett par saker på varje sida.
 
     <!--I DENNA DEL BERÄTTAR DU VAD SOM ÄR RÄTT SVAR-->
     <script>
-    function validateForm() {
-
-      //Det använder skriver i rutan hämtas in och sparas i en variabel som heter answer.
+    function validateForm()
+    {
+      if (document.forms["radioForm"]["alternativ"].value == "alt3")
+      {
+          return true;
+      }
+      else
+      {
+        document.getElementById("moveOn").innerHTML = "<h3 style=color:red>Fel, försök igen</h3>";
+        return false;
+      }
+      
+      /*FRITEXTSVAR
       var answer = document.forms["contactForm"]["answer"].value.toLowerCase();
       
       if (answer == "magdalena andersson") {
@@ -172,7 +211,7 @@ Du behöver sedan ändra ett par saker på varje sida.
         document.getElementById("answer").value ="";
         document.getElementById("answer").setAttribute("placeholder","Det var tyvärr fel svar, försök igen!");
         return false;
-      }
+      } */
     }
   </script>
 </body>

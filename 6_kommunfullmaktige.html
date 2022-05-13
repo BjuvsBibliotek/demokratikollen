@@ -49,7 +49,7 @@ Du behöver sedan ändra ett par saker på varje sida.
   <!-- Denna del av koden berättar man vad menyn skall innehålla -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">DEMOKRATIKOLLEN</a>
+        <a class="navbar-brand js-scroll-trigger" href="./index.html">DEMOKRATIKOLLEN</a>
 
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
@@ -83,7 +83,7 @@ Du behöver sedan ändra ett par saker på varje sida.
             <h3>Del 2</h3>
 
             <!--Uppgiftens nummer-->
-            <img src="img/kommunensOrganisation.png">
+            <img src="img/kommunensOrganisation.jpg" alt="Flödesschema över hur kommunen är organiserad" height="670px" width="950px">
             <br/>
             <br/>
             <h3>Fråga 6</h3>
@@ -111,7 +111,7 @@ Du behöver sedan ändra ett par saker på varje sida.
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">Svar</h2>
+            <h2 class="section-heading text-uppercase">Klicka i ditt svar</h2>
             <h3 class="section-subheading text-muted" id="moveOn"></h3>
           </div>
         </div>
@@ -124,13 +124,13 @@ Du behöver sedan ändra ett par saker på varje sida.
             onsubmit="return validateForm()" autocomplete="off">
               
               <div class="col-lg-12 text-center styleAlt">
-                <input type="radio" id="one" name="alternativ" value="alt1" checked="checked">
+                <input type="radio" id="one" name="alternativ" value="alt1" style="height:var(--radioHeight); width:var(--radioWidth); vertical-align: middle;" checked="checked">
                 <label for="one">Inga Bakken (S)</label><br/>
 
-                <input type="radio" id="two" name="alternativ" value="alt2">
+                <input type="radio" id="two" name="alternativ" value="alt2" style="height:var(--radioHeight); width:var(--radioWidth); vertical-align: middle;">
                 <label for="two">Zofia Svensson (M)</label><br/>
 
-                <input type="radio" id="three" name="alternativ" value="alt3">
+                <input type="radio" id="three" name="alternativ" value="alt3" style="height:var(--radioHeight); width:var(--radioWidth); vertical-align: middle;">
                 <label for="three">Pia Trollehjelm (SD)</label><br/>
                 <br/><br/>
               </div>
