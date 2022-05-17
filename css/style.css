@@ -40,26 +40,28 @@ header.masthead {
 	margin: 0px;
 }
 
+/*Stilformatering för telefoner*/
 @media(max-width: 480px) {
 	:root {
 		/*
 		- Om du ändrar bara radioHeight ändras mellanrummet mellan alternativen
 		- Om du ändrar bara radioWidth ändras avståndet mellan checkboxrutan och alternativtexten
 		- Om du ändrar båda ändras chexboxrutans storlek*/
-		--radioHeight: 10px;
-		--radioWidth: 10px;
+		--radioHeight: 12px;
+		--radioWidth: 12px;
 	}
 	
 	.styleAlt {
 		/*Stilformatering för svarsalternativen*/
 		font-family: 'Roboto Slab', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-		font-size: 18px;
+		font-size: 22px;
 		color:white;
 		padding: 5px;
 		border: 0px;
 		margin: 0px;
 	}
 }
+
 
 .textBox {
 	/*Färgad, lätt genomskinlig box som kan läggas bakom text skriven över bilder, för att underlätta läsning*/
