@@ -40,7 +40,7 @@ header.masthead {
 	margin: 0px;
 }
 
-@media(min-width: 768px) {
+@media(max-width: 768px) {
 	:root {
 		/*
 		- Om du ändrar bara radioHeight ändras mellanrummet mellan alternativen
