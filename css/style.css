@@ -78,14 +78,26 @@ header.masthead {
 	  }
 }
 
+@media(max-width: 1007px) {
+	header.masthead .intro-text .intro-heading {
+		/*Stilformatering för största rubriken (Demokratikollen)*/
+		font-size: 45px;
+		font-weight: 700;
+		line-height: 45px;
+		margin-bottom: 10px;
+		font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+	  }
+}
+
 
 .textBox {
 	/*Färgad, lätt genomskinlig box som kan läggas bakom text skriven över bilder, för att underlätta läsning*/
 	/*
-	- rgb står för red, green, blue och accepterar heltal 0-255. Du kan googla rgb color picker för att hitta
-	rätt siffror för den färg du vill ha. 0, 0, 0 är svart. 255, 255, 255 är vitt.
-	- a står för alpha och har med genomskinlighet att göra. Använder decimaltal mellan 0 och 1. O är helt
-	genomskinlig, 1 är helt solid.
+	- rgb står för red, green, blue och accepterar heltal 0-255. Det finns en inbyggd färgväljare i VS Code om
+	du för musen över ordet rgba. Annars kan du kan googla "rgb color picker" för att hitta rätt siffror för den
+	färg du vill ha. 0, 0, 0 är svart. 255, 255, 255 är vitt.
+	- a står för alpha och har med genomskinlighet att göra. Använder decimaltal mellan 0.0 och 1.0. O är helt
+	genomskinlig, 1 är helt solid färg.
 	*/
 	background-color:rgba(0, 0, 0, 0.8);
 	border:2px solid black;
