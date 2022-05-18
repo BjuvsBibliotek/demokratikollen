@@ -76,6 +76,10 @@ header.masthead {
 		margin-top: 0;
 		margin-bottom: 10px;
 	  }
+
+	  .hideBreak {
+		display:none;
+	}
 }
 
 .textBox {
@@ -91,3 +95,5 @@ header.masthead {
 	border:2px solid black;
 	padding:2px;
 }
+
+
